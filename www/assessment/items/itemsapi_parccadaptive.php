@@ -20,28 +20,13 @@ $request = array(
     'user_id'        => $studentid,
     'assess_inline'  => true,
     'adaptive'       => array(
-        'type'                      => 'itemadaptive',
-        'initial_ability'           => 0,
-        'item_difficulty_tolerance' => 0.1,
-        'item_difficulty_offset' => 0,
-        'eap' => array(
-            'mean'               => 0,
-            'standard_deviation' => 1,
-            'theta_min'          => -4,
-            'theta_max'          => 4,
-            'num_points'         => 50
-        ),
-        'termination_criteria' => array(
-            'min_items' => 5,
-            'max_items' => 50,
-            'error_below' => 0.7
-        ),
+        'type'                      => 'parccadaptive',
         'required_tags' => array(
             array('type' => 'adaptive-item-set', 'name' => 'ELA Decoding')
         )
     ),
     'config' => array(
-        'title' => 'Adaptive Assessment',
+        'title' => 'Adaptive Assessment – PARCC ELA algorithm',
         'administration' => array(
             'pwd' => '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8' // `password`
         ),
@@ -97,7 +82,7 @@ $signedRequest = $Init->generate();
             <li data-toggle="tooltip" data-original-title="Visit the documentation"><a href="http://docs.learnosity.com/assessment/items/knowledgebase/adaptiveassessment" title="Documentation"><span class="glyphicon glyphicon-book"></span></a></li>
         </ul>
     </div>
-    <h1>Items API – Adaptive Assessment</h1>
+    <h1>Items API – Adaptive Assessment – PARCC ELA algorithm</h1>
     <p>A dynamic assessment that adapts to the user's ability in real time.<p>
 </div>
 
